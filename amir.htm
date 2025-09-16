@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>سایت شخصی آم</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: sans-serif;
+            background: linear-gradient(to right, #0000cc, #99ccff);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* لوگو بالا با چرخش سه‌بعدی و حرکت نرم */
+        #logoContainer {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 40px;
+            perspective: 1000px;
+            animation: floatSpin3D 8s infinite ease-in-out;
+        }
+
+        #logoContainer img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+        }
+
+        @keyframes floatSpin3D {
+            0%   { transform: translateY(0) rotateY(0deg); }
+            25%  { transform: translateY(-20px) rotateY(90deg); }
+            50%  { transform: translateY(0) rotateY(180deg); }
+            75%  { transform: translateY(20px) rotateY(270deg); }
+            100% { transform: translateY(0) rotateY(360deg); }
+        }
+
+        /* پاراگراف‌های معمولی با بک‌گراند بیضی و سایه */
+        p {
+            width: 150px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            border-radius: 50% / 30%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.1), rgba(0,0,0,0.3));
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+
+        /* پاراگراف‌های اطلاعاتی با بک‌گراند مستطیلی سبز-سفید */
+        .highlight {
+            border-radius: 10px;
+            background: linear-gradient(to right, #00cc66, #ccffcc);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+            font-weight: bold;
+        }
+
+        /* دکمه سه‌بعدی با افکت‌ها */
+        #infoButton {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #infoButton:hover {
+            background-color: #00cc66;
+            transform: scale(0.95);
+        }
+
+        #scrollTarget {
+            scroll-margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- لوگو بالا -->
+    <div id="logoContainer">
+        <img src="https://s6.uupload.ir/files/nody-عکس-نوشته-امیر-به-انگلیسی-1624654526_iaxk.jpg" alt="لوگو آم">
+    </div>
+
+    <!-- ۱۰ پاراگراف خالی قبل از دکمه -->
+    <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+
+    <!-- دکمه -->
+    <button id="infoButton">اطلاعات من</button>
+
+    <!-- ۱۰ پاراگراف بعد از دکمه -->
+    <p></p><p></p><p></p><p></p>
+    <p id="scrollTarget" class="highlight">شهر: شیراز</p>
+    <p class="highlight">سن: 16</p>
+    <p class="highlight">علاقه‌ها: قالی‌بافی، بازی ماینکرافت، کارهای مربوط به کامپیوتر، ورزش و بدن‌سازی</p>
+    <p></p><p></p><p></p>
+
+    <script>
+        document.getElementById("infoButton").addEventListener("click", function() {
+            document.getElementById("scrollTarget").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
+
+</body>
+</html>
